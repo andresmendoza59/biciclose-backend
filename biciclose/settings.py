@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.gis', # Added dependency needed for geospatial localization
     'bicycles',
     'world',
+    'stations',
 ]
 
 OSGEO4W_ROOT = 'C:\\OSGeo4W'
@@ -85,10 +86,9 @@ WSGI_APPLICATION = 'biciclose.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'biciclose_geodjango', # Name of the database table
-        'USER': 'geodjango', # Postgres user
+        'NAME': 'biciclose_stations', # Name of the database table
+        'USER': 'geodjango',
         'PASSWORD': 'geodjangoadmin',
-        # 'HOST': 'localhost',
         'PORT': '5432'
     }
 }
