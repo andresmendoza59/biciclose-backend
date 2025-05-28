@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'bicycles',
     'world',
     'stations',
+    'corsheaders',
 ]
 
 OSGEO4W_ROOT = 'C:\\OSGeo4W'
@@ -57,6 +58,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "null",
 ]
 
 ROOT_URLCONF = 'biciclose.urls'
