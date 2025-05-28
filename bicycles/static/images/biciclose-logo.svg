@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066CC" />
+      <stop offset="100%" style="stop-color:#003399" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="800" height="600" fill="#ffffff" />
+  <g transform="translate(100, 100) scale(0.8)">
+    <!-- Bicycle frame -->
+    <path d="M300,300 L400,150 L500,300 L300,300 Z" fill="none" stroke="#333" stroke-width="15" />
+    
+    <!-- Wheels -->
+    <circle cx="300" cy="300" r="80" fill="none" stroke="#333" stroke-width="10" />
+    <circle cx="300" cy="300" r="75" fill="none" stroke="#555" stroke-width="2" />
+    
+    <circle cx="500" cy="300" r="80" fill="none" stroke="#333" stroke-width="10" />
+    <circle cx="500" cy="300" r="75" fill="none" stroke="#555" stroke-width="2" />
+    
+    <!-- Handlebars -->
+    <path d="M400,150 L380,120" fill="none" stroke="#333" stroke-width="10" />
+    <path d="M400,150 L420,120" fill="none" stroke="#333" stroke-width="10" />
+    
+    <!-- Pedals -->
+    <circle cx="400" cy="300" r="20" fill="none" stroke="#333" stroke-width="8" />
+  </g>
+  
+  <!-- Text -->
+  <text x="400" y="450" font-family="Arial, sans-serif" font-size="80" font-weight="bold" text-anchor="middle" fill="url(#gradient1)">
+    BiciClose
+  </text>
+</svg>

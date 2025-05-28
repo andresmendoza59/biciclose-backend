@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}BiciClose{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">BiciClose</a>
+            <div class="navbar-menu">
+                {% if user.is_authenticated %}
+                    <span>Hola, {{ user.username }}!</span>
+                    <a href="{% url 'logout' %}" class="nav-item">Cerrar sesión</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="nav-item">Iniciar sesión</a>
+                    <a href="{% url 'register' %}" class="nav-item">Registrarse</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <main class="container page-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; {% now "Y" %} BiciClose. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

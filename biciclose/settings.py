@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.gis', # Added dependency needed for geospatial localization
     'bicycles',
     'world',
+    'accounts.apps.AccountsConfig', # Add the accounts app
 ]
 
 OSGEO4W_ROOT = 'C:\\OSGeo4W'
@@ -134,3 +135,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redirect users after login and logout
+LOGIN_REDIRECT_URL = '/bicycles/' # Or your desired homepage after login
+LOGOUT_REDIRECT_URL = '/accounts/login/' # Redirect to login page after logout

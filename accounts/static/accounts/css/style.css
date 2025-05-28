@@ -1,0 +1,282 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #0056b3; /* Blue from image */
+    padding: 1rem 0;
+    color: white;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-menu a, .navbar-menu span {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: 1rem;
+}
+
+.navbar-menu a:hover {
+    text-decoration: underline;
+}
+
+.container.page-content {
+    flex-grow: 1;
+    /* max-width: 900px; */ /* Removed to allow auth-container to define width */
+    margin: 2rem auto;
+    padding: 20px;
+    width: 100%;
+    display: flex; /* Added for centering */
+    justify-content: center; /* Added for centering */
+    align-items: center; /* Added for centering */
+}
+
+.auth-container {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* margin-top: 2rem; */ /* Removed as centering is handled by page-content */
+    width: 800px; /* Or your desired width for the auth box */
+    max-width: 90%; /* Ensures responsiveness */
+}
+
+.auth-image-section {
+    flex: 1;
+    background-color: #e9ecef; /* Light grey for image background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.auth-image-section img {
+    max-width: 100%;
+    max-height: 300px; /* Adjust as needed */
+    object-fit: contain;
+}
+
+.auth-form-section {
+    flex: 1;
+    padding: 2rem 3rem;
+}
+
+.auth-form-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+form p {
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form textarea.form-control, /* Added for textarea */
+form input.form-control /* Added for inputs with this class */
+{
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    font-size: 1rem;
+    line-height: 1.5; /* Added for consistent height with single-line inputs */
+}
+
+/* Remove custom height override for telephone to use general input styling */
+/* form input[type="tel"] {
+    height: calc(1.5em + 1.5rem + 2px);
+} */
+
+form textarea.form-control {
+    line-height: 1.5;
+    padding: 0.75rem;
+    box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form input[type="date"]:focus,
+form textarea.form-control:focus, /* Added for textarea */
+form input.form-control:focus /* Added for inputs with this class */
+{
+    border-color: #0056b3;
+    outline: none;
+}
+
+.form-help-text {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+.form-field-errors {
+    color: red;
+    font-size: 0.8rem;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0.25rem;
+}
+
+
+.form-actions {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.btn-submit {
+    background-color: #007bff; /* Blue from image */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.auth-links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #e9ecef;
+    color: #333;
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+/* For register form specific layout */
+.register-form-section fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+.register-form-section legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.register-form-section .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.5rem; 
+    margin-right: -0.5rem;
+    align-items: stretch; /* Ensures form-groups in a row stretch to the same height */
+}
+
+.register-form-section .form-group {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 1rem; 
+    box-sizing: border-box;
+    display: flex; /* Added for vertical alignment of label and input */
+    flex-direction: column; /* Stack label and input vertically */
+    justify-content: flex-start; /* Align items to the start of the flex container */
+}
+
+.register-form-section .form-group label {
+    margin-bottom: 0.5rem; /* Keep space between label and input */
+}
+
+.register-form-section .form-group input,
+.register-form-section .form-group textarea {
+    width: 100%; /* Ensure inputs take full width of their .form-group container */
+    flex-grow: 1; /* Allow input/textarea to grow if needed, useful for alignment */
+}
+
+
+.register-form-section .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.register-form-section .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* Ensure inputs inside form-group take full width of their container */
+/* This rule might be redundant due to the one inside .register-form-section .form-group */
+/* .register-form-section .form-group input, */
+/* .register-form-section .form-group textarea { */
+/* width: 100%; */
+/* } */
+
+/* Adjustments for login form to ensure it also benefits from centering */
+.login-form-section .form-actions {
+    margin-top: 1.5rem;
+}
+
+.login-form-section p {
+    margin-bottom: 1rem;
+}
+
+.small .form-help-text ul, .form-help-text ul {
+    column-count: 2;
+    column-gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+
+/* Uniform height for all form controls (inputs, textareas) */
+.form-control {
+    height: calc(1.5em + 1.5rem + 2px); /* line-height + padding + border */
+}
