@@ -22,5 +22,4 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/accounts/login/', permanent=False), name='index_redirect'), # Redirect root to login
     path('bicycles/', include('bicycles.urls')),
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
 ]

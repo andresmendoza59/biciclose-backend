@@ -1,0 +1,22 @@
+{% extends 'stations/base.html' %}
+
+{% block content %}
+    <div id="map" style="height: 600px; width: 600px;">
+
+        {{ stations | json_script:"stations_json" }}
+
+        <script>
+            var map = L.map('map').setView([6.230833, -75.590553], 13);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+            let stations = JSON.parse(document.getElementById('stations_json').textContent);
+
+            stations.forEach(station => {
+                L.marker([station.latitude, station.longitude]).addTo(map)
+                    .bindPopup(station.name)
+                    .openPopup();
+            });
+        </script>
+{% endblock %}
